@@ -1,0 +1,3 @@
+default>
+echo "> compiling src/nimcraft.nim"
+nim c --define:release --verbosity:0 src/most.nim
