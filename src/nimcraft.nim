@@ -1,6 +1,7 @@
 import os
 import strutils
 import find_job
+import auto
 
 var file = ".Nimcraft"
 
@@ -12,3 +13,6 @@ when isMainModule:
       file = i.replace(".File=", "")
     else:
       discard execShellCmd(findJob(file, i))
+  if ".Generate" in commandLineParams():
+    generateConfig()
+    echo "> generated .Nimcraft"
